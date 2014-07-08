@@ -6,25 +6,10 @@ var argscheck = require('cordova/argscheck'),
 module.exports = {
 
 
-	getPairedDevice: function (success, failure) {
+    openImage: function (success, failure, url) {
         //alert("hmm");
-        cordova.exec(success, failure, "Bluetooth", "getPairedDevice", [""]);
-    },
-    startServer: function (success, failure) {
-        cordova.exec(success, failure, "Bluetooth", "startServer", [""]);
-    },
-
-    connect: function (macAddress, success, failure) {
-        cordova.exec(success, failure, "Bluetooth", "connect", [macAddress]);
-    },
-    write: function (message, success, failure) {
-        cordova.exec(success, failure, "Bluetooth", "write", [message]);
-    },
-    read: function (success, failure) {
-        cordova.exec(success, failure, "Bluetooth", "read", [""]);
-    },
-    isConnected: function (success, failure) {
-        cordova.exec(success, failure, "Bluetooth", "isconnected", [""]);
+        cordova.exec(success, failure, "openImage", "openImage", [url]);
     }
+
 
 };
