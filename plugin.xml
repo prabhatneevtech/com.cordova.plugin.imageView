@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.neev.cordova.imageView"
+    version="0.3.0">
+
+    <name>ImageViewer</name>
+    <description>Open image in native app Plugin</description>
+    <!-- <license>Apache 2.0</license>
+    <keywords>bluetooth, arduino</keywords>
+    <repo>https://github.com/don/BluetoothSerial.git</repo>
+    <issue>https://github.com/don/BluetoothSerial/issues</issue> -->
+
+    <engines>
+        <engine name="cordova" version=">=2.9.0" />
+    </engines>
+
+    <js-module src="www/imageView.js" name="imageViewer">
+        <clobbers target="window.imageViewer" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ImageViewer">
+                <param name="android-package" value="com.neev.cordova.ImageViewer"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ImageViewer.java"
+            target-dir="src/com/neev/cordova"/>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+        </config-file>
+
+    </platform>
+
+</plugin>
